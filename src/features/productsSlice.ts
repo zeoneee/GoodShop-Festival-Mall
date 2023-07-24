@@ -17,6 +17,14 @@ export interface Product {
     "products_info": string,
 }
 
+//임시 데이터 출력용 인터페이스
+export interface tempProduct {
+    "product_id": number,
+	"product_name": string,
+    "image": string,
+    "price": number,
+}
+
 interface ProductsState {
     status: string;
     error: string;
