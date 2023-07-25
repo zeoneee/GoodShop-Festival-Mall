@@ -81,7 +81,7 @@ export default function ProductDetail() {
           </S.DetailWrapper>
           <DetailTab />
         </S.ProductWrapper>
-      )}
+      }
     </>
   );
 }
