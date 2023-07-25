@@ -23,6 +23,7 @@ export interface tempProduct {
 	"product_name": string,
     "image": string,
     "price": number,
+    "stock": number,
 }
 
 interface ProductsState {
