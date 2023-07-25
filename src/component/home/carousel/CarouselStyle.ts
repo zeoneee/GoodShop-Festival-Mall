@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Carouselimg = styled.img`
-    width:1000px;
+    width: 1000px;
     height: 500px;
 
 `

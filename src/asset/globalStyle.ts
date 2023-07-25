@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root{
         /* color */
-        --color-main: #AA76FF;
+        --color-main: #FDDC26;
         --color-white:#FFFFFF;
         --color-yellow: #FFED8D;
         --color-red:#EB5757;
@@ -46,4 +46,4 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
-`
+`;

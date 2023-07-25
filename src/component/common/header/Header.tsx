@@ -9,6 +9,8 @@ import { getToken } from '../../../features/loginSlice';
 import ArrowModal from '../arrowmodal/ArrowModal';
 import { checkOpenModal, openModal } from '../../../features/modalSlice';
 import Modal from '../modal/Modal';
+import World from '../../../asset/icon/WorldBeerMarket_002.png'
+
 
 interface HeaderProps {
   usertype?: string;
@@ -41,20 +43,24 @@ function Header({...props}: HeaderProps) {
   }
 
   const needLoginModal = (
-    <Modal onClickYesBtn={()=>{navigate("/account/login")}}>
+    <Modal 
+      onClickYesBtn={()=>{
+        navigate("/account/login");
+      }}
+    >
       로그인이 필요한 서비스 입니다. <br/>
       로그인 하시겠습니까?
     </Modal>
   );
-
-  
+  const logo = World;
 
   return (
     <>
     {(Token === null || Token === "" ) && modal === true ? needLoginModal : null}
     <S.HeaderWrapper>
       <S.SearchWrapper>
-      <SVGIcon id='logo-hodu' width="124px" height="38px"/>
+      {/* <SVGIcon id={logo} width="124px" height="38px"/> */}
+        <img src={logo} width="186px" height="64px" />
         <S.SearchInput
         type='text'
         onChange={onChangeSearch}
