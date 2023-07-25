@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import { useLocation } from 'react-router-dom';
-import { getProductID } from '../../../features/productsSlice';
-import { useAppSelector } from '../../../hook/hooks';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { getProductID } from "../../../features/productsSlice";
+import { useAppSelector } from "../../../hook/hooks";
 import * as S from "./ProductDetailStyle";
+
 import { CommonBtn } from '../../../component/common/button/ButtonStyle';
 import AmountBtn from '../../../component/common/amountbutton/AmountBtn';
 import DetailTab from '../../../component/detail/DetailTab';
@@ -12,9 +13,10 @@ import DetailTab from '../../../component/detail/DetailTab';
 //state에 product바로 받아오므로 productDetail->state로 변경됨
 
 export default function ProductDetail() {
-  const { state} = useLocation();
+  const { state } = useLocation();
   const [productID, setProductID] = useState(0);
   const [selectedCount, setSelectedCount] = useState(1);
+
 
   const productDetail = useAppSelector((state) => getProductID(state, Number(productID)));
   
@@ -22,12 +24,13 @@ export default function ProductDetail() {
 
   useEffect(() => {
     setProductID(state);
-  }, [state])
+  }, [state]);
 
+  // AmountBtn callback 함수
   const getProductCount = (res: number) => {
     setSelectedCount(res);
   };
-   
+
   return (
     <>
 
@@ -37,7 +40,7 @@ export default function ProductDetail() {
           <S.ImgWrapper>
             <S.ProductImg src={state.image} alt="상품 이미지" />
           </S.ImgWrapper>
-         
+
           <S.DetailWrapper>
             <S.InfoWrapper>
               {/* <S.ProductStoreName>{state.store_name}</S.ProductStoreName> */}
@@ -50,31 +53,35 @@ export default function ProductDetail() {
               <S.ProductStock> * 재고 : {state.stock} 개</S.ProductStock>
             </S.ShipInfoWrapper>
             {/* 상품 갯수 버튼 */}
-            <AmountBtn getCount={getProductCount} stock={state.stock} />
+            <AmountBtn count={selectedCount} getCount={getProductCount} stock={state.stock} />
 
             {/* 총 가격 부분 */}
             <S.PriceWrapper>
               <S.TotalPriceTxt>총 상품 금액</S.TotalPriceTxt>
               <S.TotalPriceWrapper>
-                <S.ResultAmountTxt>총 수량 <span>{selectedCount}</span>개</S.ResultAmountTxt>
+                <S.ResultAmountTxt>
+                  총 수량 <span>{selectedCount}</span>개
+                </S.ResultAmountTxt>
                 <S.TotalPrice>
-                  {selectedCount > 0 ? (state.price * selectedCount).toLocaleString() : 0} <span>원</span>
+                  {selectedCount > 0
+                    ? (state.price * selectedCount).toLocaleString()
+                    : 0}{" "}
+                  <span>원</span>
                 </S.TotalPrice>
               </S.TotalPriceWrapper>
             </S.PriceWrapper>
-            
 
             {/* 버튼 부분 */}
             <S.ButtonWrapper>
-              <CommonBtn width='416px'>바로 구매</CommonBtn>
-              <CommonBtn width='200px'color="darkGrey">장바구니</CommonBtn>
+              <CommonBtn width="416px">바로 구매</CommonBtn>
+              <CommonBtn width="200px" color="darkGrey">
+                장바구니
+              </CommonBtn>
             </S.ButtonWrapper>
           </S.DetailWrapper>
           <DetailTab />
-
         </S.ProductWrapper>
-      }
+      )}
     </>
-    
-  )
+  );
 }

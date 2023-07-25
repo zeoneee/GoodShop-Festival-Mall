@@ -50,5 +50,9 @@
     "@types/styled-components": "^5.1.26",
     "file-loader": "^6.2.0",
     "url-loader": "^4.1.1"
-  }
+  },
+  "description": "WeWork WebProject",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
