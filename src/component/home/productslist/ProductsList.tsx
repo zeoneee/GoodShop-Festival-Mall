@@ -71,12 +71,48 @@ const tempProducts = [
       price: 30500,
       stock: 5,
     },
-    // {
-    //   product_id: 10,
-    //   image: "https://d1e2y5wc27crnp.cloudfront.net/media/smartorder_reservation/product/thumbnail/a4feb531-f6df-41ea-94bc-4b0e0090fc29.webp",
-    //   product_name: "닥터 루젠 리슬링",
-    //   price: 17700,
-    // },
+    {
+      product_id: 10,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/smartorder_reservation/product/thumbnail/a4feb531-f6df-41ea-94bc-4b0e0090fc29.webp",
+      product_name: "닥터 루젠 리슬링",
+      price: 17700,
+      stock: 5,
+    },
+    {
+      product_id: 11,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/aaeb53a0-248a-468a-9553-39c2163ffff5.webp",
+      product_name: "마리브리자드 에프리코트",
+      price: 22500,
+      stock: 5,
+    },
+    {
+      product_id: 12,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/d4d84937-f66a-4cbd-a532-83c6f0d8c4f3.webp",
+      product_name: "마리브리자드 엘더플라워",
+      price: 22500,
+      stock: 5,
+    },
+    {
+      product_id: 13,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/smartorder_reservation/product/thumbnail/dc0d97f8-b9e3-47b6-9eb0-304eea04fd55.webp",
+      product_name: "바카디 클래식 칵테일 모히토",
+      price: 27400,
+      stock: 5,
+    },
+    {
+      product_id: 14,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/smartorder_reservation/product/thumbnail/0b9830cc-d383-4b16-80d2-109458c59bf5.webp",
+      product_name: "잭 다니엘스 허니",
+      price: 45000,
+      stock: 5,
+    },
+    {
+      product_id: 15,
+      image: "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/5290e77a-3ee1-4bdd-84ed-27dcdc295af1.webp",
+      product_name: "에반 윌리엄스 허니",
+      price: 27800,
+      stock: 5,
+    },
   ];
 
 export default function ProductsList() {
@@ -97,16 +133,18 @@ export default function ProductsList() {
 
     const getPageCount = (currentPage: number) => {
         setPage(currentPage);
-      };
-
-    
-    
+      };    
       console.log(products);
+
+    const itemsPerPage = 9;
+    const startIndex = (page - 1) * itemsPerPage;
+    const visibleProducts = tempProducts.slice(startIndex, startIndex + itemsPerPage);
+    console.log(visibleProducts);
 
   return (
         <>
             <S.ProductsLists>
-                {tempProducts?.map((product) => (
+                {visibleProducts?.map((product) => (
                     <ProductCard key={product.product_id} product={product} /> )
                 )}
     
