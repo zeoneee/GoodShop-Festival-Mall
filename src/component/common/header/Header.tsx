@@ -9,6 +9,7 @@ import { getToken } from "../../../features/loginSlice";
 import ArrowModal from "../arrowmodal/ArrowModal";
 import { checkOpenModal, openModal } from "../../../features/modalSlice";
 import Modal from "../modal/Modal";
+import WorldBeerLogo from "../../../asset/icon/WorldBeerMarket_002.png"
 
 interface HeaderProps {
   usertype?: string;
@@ -59,7 +60,8 @@ function Header({ ...props }: HeaderProps) {
         : null}
       <S.HeaderWrapper>
         <S.SearchWrapper>
-          <SVGIcon id="logo-hodu" width="124px" height="38px" />
+          {/* <SVGIcon id="logo-hodu" width="124px" height="38px" /> */}
+          <img src={WorldBeerLogo} width="169px" height="42px"></img>
           <S.SearchInput
             type="text"
             onChange={onChangeSearch}
