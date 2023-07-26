@@ -16,9 +16,9 @@ const PageBtnWrapper = styled.button<{direction:string}>`
   background-color: var(--color-main);
   border-radius: 50%;
   padding: 10px 10px;
-  &:hover{
-      background-color: rgb(176, 104, 249, 0.4);
-      cursor: pointer;
+  &:hover {
+    background-color: rgb(253, 220, 38, 0.4);
+    cursor: pointer;
   }
 `
 
