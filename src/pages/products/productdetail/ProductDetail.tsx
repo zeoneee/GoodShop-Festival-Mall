@@ -35,7 +35,7 @@ export default function ProductDetail() {
     <>
 
 
-      {state &&
+      {state && (
         <S.ProductWrapper>
           <S.ImgWrapper>
             <S.ProductImg src={state.image} alt="상품 이미지" />
