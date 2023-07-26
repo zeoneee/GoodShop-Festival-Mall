@@ -16,20 +16,23 @@ export default function ProductCard({product} : {product: tempProduct}) {
     }
     
   return (
-    <S.ProductCardWrapper onClick={() => navigate(`products/${product.product_id}`, {state: product})}>
-          <S.Thumbnailimg url={product.image}>
-            <div>
+    <S.ProductCardWrapper
+      onClick={() =>
+        navigate(`products/${product.product_id}`, { state: product })
+      }
+    >
+      <S.Thumbnailimg url={product.image}>
+        {/* <div>
                 <S.CartBtn type='button' onClick={handleCart}>
                     <SVGIcon id='icon-shopping-cart-2' width= "60px" height="60px" />
                 </S.CartBtn>
-            </div>
-          </S.Thumbnailimg>
-          <S.ProductCardTxtWrapper>
-            {/* <S.StoreNameTxt>{product.store_name}</S.StoreNameTxt> */}
-            <S.ProductNameTxt>{product.product_name}</S.ProductNameTxt>
-            <S.ProductPriceTxt>{product.price.toLocaleString()}</S.ProductPriceTxt>
-          
-          </S.ProductCardTxtWrapper>          
+                </div> */}
+      </S.Thumbnailimg>
+      <S.ProductCardTxtWrapper>
+        {/* <S.StoreNameTxt>{product.store_name}</S.StoreNameTxt> */}
+        <S.ProductNameTxt>{product.product_name}</S.ProductNameTxt>
+        <S.ProductPriceTxt>{product.price.toLocaleString()}</S.ProductPriceTxt>
+      </S.ProductCardTxtWrapper>
     </S.ProductCardWrapper>
-  )
+  );
 }

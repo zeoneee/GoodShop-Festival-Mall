@@ -22,7 +22,8 @@ const DetailWrapper = styled.div`
 `;
 
 const InfoWrapper = styled.div`
-  margin-bottom: 138px;
+  margin-top: 20px;
+  margin-bottom: 140px;
 `;
 
 const ProductImg = styled.img``;
@@ -59,8 +60,10 @@ const ShipInfoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
   padding-bottom: 20px;
   border-bottom: 3px solid var(--color-grey);
+  width: 630px;
 `;
 
 const Shipping = styled.p`
@@ -73,22 +76,43 @@ const ProductStock = styled.p`
   color: var(--color-red);
 `;
 
-const TotalPriceTxt = styled.p``;
-
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 14px;
 `;
 
 const PriceWrapper = styled.div`
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 3px solid var(--color-grey);
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  width: 630px;
 `;
 
-const TotalPriceWrapper = styled.span``;
+const ResultAmountTxt = styled.span`
+  font-size: 18px;
+  line-height: 23px;
+  margin-left: 5px;
+`;
 
-const ResultAmountTxt = styled.p``;
+const TotalPriceWrapper = styled.span`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 18px;
+  line-height: 23px;
+`;
 
-const TotalPrice = styled.p``;
+const TotalPriceTxt = styled.span``;
+
+const TotalPrice = styled.span`
+  margin-left: 10px;
+`;
+
 export {
   ProductStoreName,
   ProductName,
