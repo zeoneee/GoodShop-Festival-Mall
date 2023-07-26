@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 
 export type SvgIconId =
+  | 'WorldBeerMarket_002'
   | 'icon-check-on'
   | 'icon-check-off'
   | 'icon-shopping-cart'
@@ -33,7 +34,7 @@ export type SvgIconId =
 }
 
 const SvgIcon = styled.svg<{value?:string; marginRight?:string}>`
-    cursor: ${({value}) => value === "logo-hodu" ? "pointer" : ""};
+    cursor: ${({value}) => value === "WorldBeerMarket_002" ? "pointer" : ""};
     margin-right: ${({marginRight}) => marginRight};
 `
 
@@ -42,7 +43,7 @@ function SVGIcon({id, label=undefined, width=24, height=24, alt, fill = 'current
     const navigate = useNavigate();
 
     const navigateHome = () => {
-        if(id === "logo-hodu"){
+        if(id === "WorldBeerMarket_002"){
             navigate("/")
         }
       }
