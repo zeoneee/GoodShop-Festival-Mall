@@ -11,10 +11,10 @@ interface PageBtnProps{
 
 const PageBtnWrapper = styled.button<{direction:string}>`
   position: absolute;
-  top:  50%;
-  left: ${({direction}) => (direction === "prev" ? "12%" : "85%")};
-  background-color: rgb(176, 104, 249, 0.2);
-  border-radius :50%;
+  top: 50%;
+  left: ${({ direction }) => (direction === "prev" ? "12%" : "85%")};
+  background-color: var(--color-main);
+  border-radius: 50%;
   padding: 10px 10px;
   &:hover{
       background-color: rgb(176, 104, 249, 0.4);
