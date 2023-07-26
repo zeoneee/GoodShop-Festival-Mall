@@ -57,11 +57,11 @@ export default function ProductDetail() {
 
             {/* 총 가격 부분 */}
             <S.PriceWrapper>
-              <S.TotalPriceTxt>총 상품 금액</S.TotalPriceTxt>
+              <S.ResultAmountTxt>
+                총 수량 <span>{selectedCount}</span>개
+              </S.ResultAmountTxt>
               <S.TotalPriceWrapper>
-                <S.ResultAmountTxt>
-                  총 수량 <span>{selectedCount}</span>개
-                </S.ResultAmountTxt>
+                <S.TotalPriceTxt>총 상품 금액</S.TotalPriceTxt>
                 <S.TotalPrice>
                   {selectedCount > 0
                     ? (state.price * selectedCount).toLocaleString()
@@ -81,7 +81,7 @@ export default function ProductDetail() {
           </S.DetailWrapper>
           <DetailTab />
         </S.ProductWrapper>
-      }
+      )}
     </>
   );
 }
