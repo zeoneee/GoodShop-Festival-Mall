@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import searchImg from "../../../asset/icon/search.png";
+import searchImg from "../../../asset/icon/search.png"
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -70,9 +70,9 @@ const SellerCenterBtn = styled.button`
 `;
 
 const BuyerWrapper = styled.div`
-  display: flex;
-  gap: 25px;
-  position: relative;
+    display: flex;
+    gap: 25px;
+    position: relative;
 `;
 
 export {
