@@ -21,14 +21,16 @@ export default function Router() {
                     <Route path=":id/" element={<ProductDetail />}/>
                     <Route path="*" element={<Error />}/>
                 </Route>
-                <Route path="/cart/" element={<Outlet />}>
+                <Route path="/cart" element={<Cart />} />
+                <Route path="order" element={<Order/>}/>
+                {/* <Route path="/cart/" element={<Outlet />}>
                     <Route path=":username/" element={<Cart />}/>
                     <Route path="*" element={<Error />}/>
                 </Route>
                 <Route path="/order/" element={<Outlet />}>
                     <Route path=":username/" element={<Order />}/>
                     <Route path="*" element={<Error />}/>
-                </Route>
+                </Route> */}
             </Route>
             <Route path="/account/" element={<Outlet />}>
                 <Route path="join/" element={<Join />}/>
