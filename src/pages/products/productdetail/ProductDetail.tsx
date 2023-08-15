@@ -46,6 +46,7 @@ export default function ProductDetail() {
               {/* <S.ProductStoreName>{state.store_name}</S.ProductStoreName> */}
               <S.ProductName>{state.product_name}</S.ProductName>
               <S.ProductPrice>{state.price.toLocaleString()}</S.ProductPrice>
+              {/* 상품 설명 DB에서 가져오기 */}
             </S.InfoWrapper>
             <S.ShipInfoWrapper>
               {/* <S.Shipping>{productDetail.shipping_method === "PARCEL" ? "직접배송" : "택배배송" 
