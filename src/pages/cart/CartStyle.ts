@@ -15,8 +15,15 @@ const ProductLsit = styled.table`
   width: 100%;
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid #BCBCBC;
+  border: 1px solid #bcbcbc;
   text-align: center;
+`;
+
+const ProductListCaption = styled.caption`
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0px;
+  text-align: left;
 `;
 
 const ProductListHead = styled.thead`
@@ -29,7 +36,7 @@ const ProductListHead = styled.thead`
 const ProductListRow = styled.tr`
   td {
     vertical-align: middle;
-    border-top: 1px solid #BCBCBC;
+    border-top: 1px solid #bcbcbc;
   }
 `;
 
@@ -50,11 +57,9 @@ const ProductImg = styled.td`
 `;
 
 const ProductName = styled.td`
-  width: 200px;
+  width: 300px;
   font-weight: 700;
 `;
-
-const ProductBooth = styled.td``;
 
 const ProductQuantity = styled.td``;
 
@@ -62,7 +67,7 @@ const ProductPrice = styled.td``;
 
 const ProductDeleteBtn = styled.td`
   width: 100px;
-  img{
+  img {
     width: 25px;
   }
 `;
@@ -113,6 +118,7 @@ export {
   CartWrapeer,
   CartTitle,
   ProductLsit,
+  ProductListCaption,
   ProductListHead,
   ProductListRow,
   ProductListTD,
@@ -120,7 +126,6 @@ export {
   ProductCheckBox,
   ProductImg,
   ProductName,
-  ProductBooth,
   ProductQuantity,
   ProductPrice,
   ProductDeleteBtn,

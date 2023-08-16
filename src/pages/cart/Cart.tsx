@@ -3,7 +3,7 @@ import * as S from "./CartStyle";
 
 import { CommonBtn } from "../../component/common/button/ButtonStyle";
 import { CheckBoxInput } from "../../component/common/checkbox/CheckBoxInput";
-import deleteIcon from "../../asset/icon/delete.png"
+import deleteIcon from "../../asset/icon/delete.png";
 
 export default function Cart() {
   const [productList, setProductList] = useState([
@@ -19,9 +19,10 @@ export default function Cart() {
   ]);
 
   const productSelection = (productId) => {
-    const updatedProductList = productList.map((product) => 
-      product.id === productId ? {...product, selected: !product.selected}
-      : product
+    const updatedProductList = productList.map((product) =>
+      product.id === productId
+        ? { ...product, selected: !product.selected }
+        : product
     );
     setProductList(updatedProductList);
   };
@@ -34,43 +35,47 @@ export default function Cart() {
     <>
       <S.CartWrapeer>
         <S.CartTitle>장바구니</S.CartTitle>
-        <S.ProductLsit>
-          <S.ProductListHead>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>상품 정보</td>
-            <td>부스명</td>
-            <td>수량</td>
-            <td>가격</td>
-            <td>전체 삭제</td>
-          </S.ProductListHead>
-          <tbody>
-            {productList.map((product) => (
+        {productList.map((product) => (
+          <S.ProductLsit>
+            <S.ProductListCaption>
+              부스: {product.boothName}
+            </S.ProductListCaption>
+            <S.ProductListHead>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>상품 정보</td>
+              <td>수량</td>
+              <td>가격</td>
+              <td>전체 삭제</td>
+            </S.ProductListHead>
+            <tbody>
               <S.ProductListRow key={product.id}>
-              <S.ProductId>{product.id}</S.ProductId>
-              <S.ProductCheckBox>
-                <CheckBoxInput
-                  onChange={() => productSelection(product.id)}
-                  checked={product.selected}
-                  children={undefined}
-                />
-              </S.ProductCheckBox>
-              <S.ProductImg>
-                <S.ImgWrapper>
-                  <img src={product.url}></img>
-                </S.ImgWrapper>
-              </S.ProductImg>
-              <S.ProductName>{product.name}</S.ProductName>
-              <S.ProductBooth>{product.boothName}</S.ProductBooth>
-              <S.ProductQuantity>{product.quantity}</S.ProductQuantity>
-              <S.ProductPrice>{product.price.toLocaleString()}원</S.ProductPrice>
-              <S.ProductDeleteBtn><img src={deleteIcon}></img></S.ProductDeleteBtn>
-            </S.ProductListRow>
-            ))}
-            
-          </tbody>
-        </S.ProductLsit>
+                <S.ProductId>{product.id}</S.ProductId>
+                <S.ProductCheckBox>
+                  <CheckBoxInput
+                    onChange={() => productSelection(product.id)}
+                    checked={product.selected}
+                    children={undefined}
+                  />
+                </S.ProductCheckBox>
+                <S.ProductImg>
+                  <S.ImgWrapper>
+                    <img src={product.url}></img>
+                  </S.ImgWrapper>
+                </S.ProductImg>
+                <S.ProductName>{product.name}</S.ProductName>
+                <S.ProductQuantity>{product.quantity}</S.ProductQuantity>
+                <S.ProductPrice>
+                  {product.price.toLocaleString()}원
+                </S.ProductPrice>
+                <S.ProductDeleteBtn>
+                  <img src={deleteIcon}></img>
+                </S.ProductDeleteBtn>
+              </S.ProductListRow>
+            </tbody>
+          </S.ProductLsit>
+        ))}
 
         {/* 총 가격 부분 */}
         <S.OrderWrapper>
