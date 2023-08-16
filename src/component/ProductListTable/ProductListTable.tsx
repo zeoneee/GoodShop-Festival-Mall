@@ -21,7 +21,9 @@ export default function ProductListTable({ product, setProductList }) {
   return (
     <>
       <S.ProductList>
-        <S.ProductListCaption>부스: {product[0].boothName}</S.ProductListCaption>
+        <S.ProductListCaption>
+          부스: {product[0].boothName}
+        </S.ProductListCaption>
         <S.ProductListHead>
           <td></td>
           <td></td>
@@ -49,9 +51,7 @@ export default function ProductListTable({ product, setProductList }) {
               </S.ProductImg>
               <S.ProductName>{item.name}</S.ProductName>
               <S.ProductQuantity>{item.quantity}</S.ProductQuantity>
-              <S.ProductPrice>
-                {item.price.toLocaleString()}원
-              </S.ProductPrice>
+              <S.ProductPrice>{item.price.toLocaleString()}원</S.ProductPrice>
               <S.ProductDeleteBtn>
                 <img src={deleteIcon} alt="delete"></img>
               </S.ProductDeleteBtn>

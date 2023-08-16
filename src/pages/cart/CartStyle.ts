@@ -49,7 +49,6 @@ const ButtonWrapper = styled.div`
 export {
   CartWrapeer,
   CartTitle,
-  
   OrderWrapper,
   PriceWrapper,
   TotalPriceTxt,

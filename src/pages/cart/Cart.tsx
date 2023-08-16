@@ -26,7 +26,10 @@ export default function Cart() {
       <S.CartWrapeer>
         <S.CartTitle>장바구니</S.CartTitle>
         {productList.map((product) => (
-          <ProductListTable product={productList} setProductList={setProductList}/>
+          <ProductListTable
+            product={productList}
+            setProductList={setProductList}
+          />
         ))}
 
         {/* 총 가격 부분 */}
