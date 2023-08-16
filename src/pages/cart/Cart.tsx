@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import * as S from "./CartStyle";
 
 import { CommonBtn } from "../../component/common/button/ButtonStyle";
-import { CheckBoxInput } from "../../component/common/checkbox/CheckBoxInput";
-import deleteIcon from "../../asset/icon/delete.png";
+import ProductListTable from "../../component/ProductListTable/ProductListTable";
 
 export default function Cart() {
   const [productList, setProductList] = useState([
@@ -18,15 +17,6 @@ export default function Cart() {
     },
   ]);
 
-  const productSelection = (productId) => {
-    const updatedProductList = productList.map((product) =>
-      product.id === productId
-        ? { ...product, selected: !product.selected }
-        : product
-    );
-    setProductList(updatedProductList);
-  };
-
   const totalPrice = productList
     .filter((product) => product.selected)
     .reduce((total, product) => total + product.price, 0);
@@ -36,45 +26,7 @@ export default function Cart() {
       <S.CartWrapeer>
         <S.CartTitle>장바구니</S.CartTitle>
         {productList.map((product) => (
-          <S.ProductLsit>
-            <S.ProductListCaption>
-              부스: {product.boothName}
-            </S.ProductListCaption>
-            <S.ProductListHead>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>상품 정보</td>
-              <td>수량</td>
-              <td>가격</td>
-              <td>전체 삭제</td>
-            </S.ProductListHead>
-            <tbody>
-              <S.ProductListRow key={product.id}>
-                <S.ProductId>{product.id}</S.ProductId>
-                <S.ProductCheckBox>
-                  <CheckBoxInput
-                    onChange={() => productSelection(product.id)}
-                    checked={product.selected}
-                    children={undefined}
-                  />
-                </S.ProductCheckBox>
-                <S.ProductImg>
-                  <S.ImgWrapper>
-                    <img src={product.url}></img>
-                  </S.ImgWrapper>
-                </S.ProductImg>
-                <S.ProductName>{product.name}</S.ProductName>
-                <S.ProductQuantity>{product.quantity}</S.ProductQuantity>
-                <S.ProductPrice>
-                  {product.price.toLocaleString()}원
-                </S.ProductPrice>
-                <S.ProductDeleteBtn>
-                  <img src={deleteIcon}></img>
-                </S.ProductDeleteBtn>
-              </S.ProductListRow>
-            </tbody>
-          </S.ProductLsit>
+          <ProductListTable product={productList} setProductList={setProductList}/>
         ))}
 
         {/* 총 가격 부분 */}
