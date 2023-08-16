@@ -8,6 +8,7 @@ import Order from "../pages/order/Order";
 import ProductDetail from "../pages/products/productdetail/ProductDetail";
 import { MainLayout } from "../component/layout/Layout";
 import Search from "../pages/search/Search";
+import OrderComplete from "../pages/order/orderComplete/OrderComplete";
 
 
 export default function Router() {
@@ -23,6 +24,7 @@ export default function Router() {
                 </Route>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="order" element={<Order/>}/>
+                <Route path="orderComplete" element={<OrderComplete/>}/>
                 {/* <Route path="/cart/" element={<Outlet />}>
                     <Route path=":username/" element={<Cart />}/>
                     <Route path="*" element={<Error />}/>
