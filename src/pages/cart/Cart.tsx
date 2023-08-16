@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import * as S from "./CartStyle";
 
 import { CommonBtn } from "../../component/common/button/ButtonStyle";
 import ProductListTable from "../../component/ProductListTable/ProductListTable";
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   const [productList, setProductList] = useState([
     {
       id: 1,
@@ -20,6 +24,9 @@ export default function Cart() {
   const totalPrice = productList
     .filter((product) => product.selected)
     .reduce((total, product) => total + product.price, 0);
+
+  // 상품정보 주문페이지로 전달
+  const navigateToOrder = () => navigate(`/order`, {state: productList});
 
   return (
     <>
@@ -42,7 +49,9 @@ export default function Cart() {
             </S.TotalPrice>
           </S.PriceWrapper>
           <S.ButtonWrapper>
-            <CommonBtn width="200px">주문하기</CommonBtn>
+            <CommonBtn width="200px" onClick={navigateToOrder}>
+              주문하기
+            </CommonBtn>
           </S.ButtonWrapper>
         </S.OrderWrapper>
       </S.CartWrapeer>
