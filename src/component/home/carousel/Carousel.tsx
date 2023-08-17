@@ -1,11 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import sample1 from "../../../asset/carouselimg/sample1.png";
 import sample2 from "../../../asset/carouselimg/sample2.png";
 import sample3 from "../../../asset/carouselimg/sample3.png";
 import * as S from "./CarouselStyle";
-import PageBtn from './PageBtn';
-
-
+import PageBtn from "./PageBtn";
 
 export const useInterval = (callback, delay) => {
   const savedCallback = useRef(() => {});
@@ -33,9 +31,6 @@ export default function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
   const thumbnail = [sample1, sample2, sample3];
 
-
-  
-
   // 캐러셀 자동 슬라이드
   useInterval(() => {
     if (slideIndex === 2) {
@@ -43,7 +38,7 @@ export default function Carousel() {
     } else {
       setSlideIndex(slideIndex + 1);
     }
-  }, 3500);
+  }, 5000);
 
   // 오른쪽 버튼 클릭 시 오른쪽으로 슬라이드 이동
   const nextSlide = () => {
@@ -51,7 +46,7 @@ export default function Carousel() {
       setSlideIndex(slideIndex + 1);
     }
   };
-  
+
   // 왼쪽 버튼 클릭 시 왼쪽으로 슬라이드 이동
   const prevSlide = () => {
     if (slideIndex !== 0) {
@@ -70,24 +65,19 @@ export default function Carousel() {
         {thumbnail.map((item, index) => (
           <S.Carousel
             key={index}
-            className={slideIndex === index ? 'active' : ""}
+            className={slideIndex === index ? "active" : ""}
             style={
               slideIndex === 3
-                ? { transform: 'translateX(0px)' }
+                ? { transform: "translateX(0px)" }
                 : { transform: `translateX(-${slideIndex}00%)` }
             }
           >
-            <S.Carouselimg
-              src={item}
-              alt=""
-            />
+            <S.Carouselimg src={item} alt="" />
           </S.Carousel>
         ))}
-         </S.CarouselImgWindow>
+      </S.CarouselImgWindow>
 
-      {slideIndex !== 0 && (
-        <PageBtn moveSlide={prevSlide} direction="prev" />
-      )}
+      {slideIndex !== 0 && <PageBtn moveSlide={prevSlide} direction="prev" />}
       {slideIndex !== TOTAL_SLIDES && (
         <PageBtn moveSlide={nextSlide} direction="next" />
       )}
@@ -97,12 +87,10 @@ export default function Carousel() {
           <S.PageIcon
             key={index}
             onClick={() => movePage(index)}
-            className={slideIndex === index ? 'icon active' : 'icon'}
+            className={slideIndex === index ? "icon active" : "icon"}
           />
         ))}
       </S.IconWrap>
-      </S.CarouselWrapper>
-   
+    </S.CarouselWrapper>
   );
-};
-
+}
