@@ -214,7 +214,7 @@ export default function JoinInputForm() {
   const onChangePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const message = "* 휴대폰번호 형식을 확인해주세요.";
-    const phoneRegExp = "^[0-9]{3,4}$";
+    const phoneRegExp = "^[0-9]{4}$";
 
     if (value.match(phoneRegExp)) {
       setUserFormValue({ ...userFormValue, [name]: value });
@@ -412,7 +412,7 @@ export default function JoinInputForm() {
             children={undefined}
           />
           <span>
-            호두샵의 이용약관 및 개인정보처리방침에 대한 내용을 확인하였고
+            월드비어마켓의 이용약관 및 개인정보처리방침에 대한 내용을 확인하였고
             동의합니다.
           </span>
         </AgreeWrapper>
