@@ -6,8 +6,6 @@ import * as S from "./ProductDetailStyle";
 
 import { CommonBtn } from '../../../component/common/button/ButtonStyle';
 import AmountBtn from '../../../component/common/amountbutton/AmountBtn';
-import DetailTab from '../../../component/detail/DetailTab';
-
 
 //임시 주류 데이터 출력을 위해 state에 productID->product자체 받도록 변경
 //state에 product바로 받아오므로 productDetail->state로 변경됨
@@ -80,7 +78,6 @@ export default function ProductDetail() {
               </CommonBtn>
             </S.ButtonWrapper>
           </S.DetailWrapper>
-          <DetailTab />
         </S.ProductWrapper>
       )}
     </>
