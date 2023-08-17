@@ -4,10 +4,11 @@ const ProductWrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  margin: 80px;
+  width: 65%;
+  margin: 50px auto;
 `;
 const ImgWrapper = styled.div`
-  width: 100%;
+  width: 600px;
   max-height: 600px;
   img {
     display: block;

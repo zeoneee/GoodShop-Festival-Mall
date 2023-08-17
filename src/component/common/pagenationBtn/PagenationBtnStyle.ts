@@ -26,9 +26,10 @@ const PrevBtn = styled.button`
 const NextBtn = styled.button``;
 
 const PagenationBtnWrapper = styled.div`
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 `;
 
 export { PageNumberBtn, PrevBtn, NextBtn, PagenationBtnWrapper };

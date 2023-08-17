@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import searchImg from "../../../asset/icon/search.png"
+import searchImg from "../../../asset/icon/search.png";
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -10,6 +10,11 @@ const HeaderWrapper = styled.div`
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 `;
 
+const Logo = styled.button`
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-main);
+`;
 const SearchWrapper = styled.div`
   position: relative;
   display: flex;
@@ -70,9 +75,9 @@ const SellerCenterBtn = styled.button`
 `;
 
 const BuyerWrapper = styled.div`
-    display: flex;
-    gap: 25px;
-    position: relative;
+  display: flex;
+  gap: 25px;
+  position: relative;
 `;
 
 export {
@@ -85,4 +90,5 @@ export {
   SellerCenterBtn,
   HeaderWrapper,
   BuyerWrapper,
+  Logo,
 };
